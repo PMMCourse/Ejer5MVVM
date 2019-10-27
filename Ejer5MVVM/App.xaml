@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Ejer5MVVM"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>
+<!--
+    Ejercicio MVVM
+
+Crear una calculadora sume, reste, multiplique y divida.
+-->
