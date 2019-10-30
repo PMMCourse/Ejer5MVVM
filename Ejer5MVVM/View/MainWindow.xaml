@@ -16,13 +16,13 @@
             </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Button x:Name="Button1" Content="+" Height="40" Width="40" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left"
-                    Command="{Binding CheckTextGreetingsCommand}"/>
+                    Command="{Binding InsertOperator}" CommandParameter="+"/>
                 <Button x:Name="Button2" Content="-" Height="40" Width="40" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" 
-                    Command="{Binding CheckTextGreetingsCommand}"/>
+                    Command="{Binding CheckTextGreetingsCommand}" CommandParameter="-"/>
                 <Button x:Name="Button3" Content="X" Height="40" Width="40" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" 
-                    Command="{Binding CheckTextGreetingsCommand}"/>
+                    Command="{Binding CheckTextGreetingsCommand}" CommandParameter="X"/>
                 <Button x:Name="Button4" Content="÷" Height="40" Width="40" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" 
-                    Command="{Binding CheckTextGreetingsCommand}"/>
+                    Command="{Binding CheckTextGreetingsCommand}" CommandParameter="/"/>
                 <Button x:Name="Button5" Content="=" Height="40" Width="40" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" 
                     Command="{Binding InsertNumberCommand}"/>
                 <Label Content="{Binding OperationResult}"/>
