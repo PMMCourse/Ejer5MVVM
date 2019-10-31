@@ -11,9 +11,6 @@ namespace Ejer5MVVM.ViewModel
 {
     class MainViewModel : BaseViewModel
     {
-       /* private RelayCommand _checkTextGreetingsCommand;
-        public ICommand CheckTextGreetingsCommand => _checkTextGreetingsCommand;*/
-
         private RelayCommand<String> _insertNumberCommand;
         public ICommand InsertNumberCommand => _insertNumberCommand;
 
@@ -22,7 +19,6 @@ namespace Ejer5MVVM.ViewModel
 
         public MainViewModel()
         {
-            //_checkTextGreetingsCommand = new RelayCommand(PerformInsertNumber);
             _insertNumberCommand = new RelayCommand<String>(PerformInsertNumber);
             _insertOperator = new RelayCommand<String>(PerformOperator);
         }
@@ -92,8 +88,6 @@ namespace Ejer5MVVM.ViewModel
             set
             {
                 _numbersOperate = value;
-                //Cuando hacemos llamada del método RaiseProperty lanzamos la notificación de que esta 
-                //propiedad se ha visto modificada, para que todos los interesados puedan consultar su valor.
                 RaiseProperty();
             }
         }
