@@ -14,24 +14,50 @@ namespace Ejer5MVVM.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
-        private RelayCommand _addname;
+        private RelayCommand _Addname;
+        private RelayCommand _Delname;
         private RelayCommand _CheckIndice;
         public ICommand CheckIndice => _CheckIndice;
-        public ICommand addname => _addname;
-        private int _indice;
-        public List<string> _Nombres = new List<string>()
+        public ICommand Delname => _Delname;
+        public ICommand Addname
+        {
+            get
+            {
+                if (_Addname == null)
+                    _Addname = new RelayCommand(new Action(AddName));
+                return _Addname;
+            }
+        }
+
+        private int _Indice;
+        private string _Nom;
+        private string _NombreSele;
+        private string _Mostrarindice;
+
+        public ObservableCollection<string> _Nombres = new ObservableCollection<string>()
         {
             "Ana",
-            "Nacho",     
+            "Nacho",
             "Pedro",
         };
 
         public MainViewModel()
         {
             _CheckIndice = new RelayCommand(Checkindice);
-            _addname = new RelayCommand(Addname);
+            _Delname = new RelayCommand(DelName);
+           
         }
-        private string _NombreSele;
+
+        public string Nom
+        {
+            get => _Nom;
+            set
+            {
+                _Nom = value;
+                RaiseProperty();
+            }
+        }
+
         public string NombreSele
         {
             get
@@ -44,8 +70,8 @@ namespace Ejer5MVVM.ViewModel
                 RaiseProperty();
             }
         }
-
-        public List<string> Nombres
+    
+        public ObservableCollection<string> Nombres
         {
             get => _Nombres;
             set
@@ -54,31 +80,75 @@ namespace Ejer5MVVM.ViewModel
                 RaiseProperty();
             }
         }
-      
+
+        public string Mostrarindice
+        {
+            get => _Mostrarindice;
+            set
+            {
+                _Mostrarindice = value;
+                RaiseProperty();
+            }
+        }
+
+        public int Indice
+        {
+            get => _Indice;
+            set
+            {
+                _Indice = value;
+                RaiseProperty();
+            }
+        }
+
         private void Checkindice()
         {
             for (int i = 0; i < Nombres.Count; i++)
             {
-                if (_indice == Nombres.IndexOf(Nombres[i]))
+                if (_Indice == Nombres.IndexOf(Nombres[i]))
                 {
-                    MessageBox.Show(""+Nombres[i]+" "+ Nombres.IndexOf(Nombres[i]));
+                    Mostrarindice = $"{Nombres[i]}, {Nombres.IndexOf(Nombres[i])}";
                 }
             }
         }
 
-        private void Addname()
+        private void AddName()
         {
-            _Nombres.Add("pepe");
-            MessageBox.Show("nombre añadido");            
-        }
-        public int indice
-        {
-            get =>_indice;
-            set
+            if (Nom != null && Nom != "")
             {
-                _indice = value;
-                RaiseProperty();
+                Nombres.Add(Nom);
+                MessageBox.Show("nombre añadido");
+                Nom = "";
             }
+            else
+            {
+                MessageBox.Show("Campo vacio");
+            }
+
+        }
+
+        private void DelName()
+        {
+            if(NombreSele != null)
+            {
+                Nombres.Remove(NombreSele);
+                MessageBox.Show("nombre eliminado");
+            }
+            else 
+            {
+                foreach(var i in Nombres)
+                {
+                    if(Nom == i)
+                    {
+                        Nombres.Remove(Nom);
+                        MessageBox.Show("nombre eliminado");
+                        Nom = "";
+                        return;
+                    }
+                }
+                MessageBox.Show("nombre no encontrado");
+                Nom = "";
+            }           
         }
     }
 }

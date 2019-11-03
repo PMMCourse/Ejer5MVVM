@@ -11,9 +11,13 @@
     </Window.Resources>
     <Grid DataContext="{StaticResource VM}" Margin="0,0,-0.4,-20">
         <Button Command="{Binding CheckIndice}" Content="checkindice" HorizontalAlignment="Left" Margin="106,190" VerticalAlignment="Top" Width="75"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="203,190,0,0" TextWrapping="Wrap" Text="{Binding indice, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="203,190,0,0" TextWrapping="Wrap" Text="{Binding Indice, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
         <ListBox SelectedItem="{Binding NombreSele}" ItemsSource="{Binding Nombres}" x:Name="listnombres" HorizontalAlignment="Left" Height="150" Margin="453,30,0,0" VerticalAlignment="Top" Width="203"/>
         <TextBox HorizontalAlignment="Left" Height="114" Margin="453,250,0,0" TextWrapping="Wrap" Text="{Binding NombreSele}" VerticalAlignment="Top" Width="203"/>
-        <Button Command="{Binding addname}" Content="agregar" HorizontalAlignment="Left" Margin="106,250,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Command="{Binding Addname}" Content="agregar" HorizontalAlignment="Left" Margin="106,250,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="203,246,0,0" TextWrapping="Wrap" Text="{Binding Nom}" VerticalAlignment="Top" Width="120"/>
+        <Button Command="{Binding Delname}" Content="Eliminar" HorizontalAlignment="Left" Margin="106,308,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="203,308,0,0" TextWrapping="Wrap" Text="{Binding Nom}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="64" Margin="133,97,0,0" TextWrapping="Wrap" Text="{Binding Mostrarindice}" VerticalAlignment="Top" Width="122"/>
     </Grid>
 </Window>
