@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ejer5MVVM.Properties
+namespace PracticaMVVM.Properties
 {
 
 
