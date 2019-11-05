@@ -24,5 +24,19 @@ namespace Ejer5MVVM
         {
             InitializeComponent();
         }
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            String tex = tbMain.Text;
+            tbresult.Text = Invertir(tbMain.Text);
+            
+        }
+        static string Invertir(string c)
+        {
+            char[] array = c.ToCharArray(); //Lo paso a array
+            Array.Reverse(array);//metodo para darle la vuelta 
+            return new string(array); //lo convierto a String de nuevo
+        }
     }
 }

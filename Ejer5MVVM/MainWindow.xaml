@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ejer5MVVM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="281.579" Width="800">
     <Grid>
-        
+        <TextBox x:Name="tbMain" HorizontalAlignment="Left" Height="103" Margin="45,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247"/>
+        <Label Content="Introduze el texto para darle la vuelta va tio?" HorizontalAlignment="Left" Margin="45,59,0,0" VerticalAlignment="Top" Width="247"/>
+        <Button Content="Invertir" HorizontalAlignment="Left" Margin="351,176,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox x:Name="tbresult" HorizontalAlignment="Left" Height="103" Margin="478,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247"/>
+
     </Grid>
 </Window>
