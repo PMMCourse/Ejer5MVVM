@@ -13,18 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace Ejer5MVVM.View {
-
-    public partial class MainWindow : Window {
-        ViewModel.MainViewModel vm = new ViewModel.MainViewModel();
-        public MainWindow() {
+    public partial class ShowText : Window {
+        public ShowText(ViewModel.MainViewModel vm) {
             InitializeComponent();
-
+            var vm2 = vm;
             DataContext = vm;
-        }
-
-        private void btn_Boton_Click(object sender, RoutedEventArgs e) {
-            ShowText showText = new ShowText(vm);
-            showText.ShowDialog();
         }
     }
 }
