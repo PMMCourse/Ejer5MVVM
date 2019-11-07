@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using Ejer5MVVM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,24 @@ namespace Ejer5MVVM
         public MainWindow()
         {
             InitializeComponent();
+            //Conexion entre la vista y el MainViewModel
+            var Conex = new MainViewModel();
+            DataContext = Conex;
+        }
+
+        private void txtIntroducir_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btnMostrar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txtMostrar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
