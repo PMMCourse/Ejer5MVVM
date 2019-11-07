@@ -13,18 +13,18 @@ namespace Ejer5MVVM.VistaModelo
         private RelayCommand _comprobarComando;
         public ICommand comprobarComando => _comprobarComando;
 
-        private RelayCommand<int> _insertNumberCommand;
+        private RelayCommand<String> _insertNumberCommand;
         public ICommand InsertNumberCommand => _insertNumberCommand;
 
         public void MainViewModel()
         {
             _comprobarComando = new RelayCommand(PerformCheckText);
-            _insertNumberCommand = new RelayCommand<int>(PerformInsertNumber);
+            _insertNumberCommand = new RelayCommand<String>(PerformInsertNumber);
         }
 
-        private void PerformInsertNumber(int obj)
+        private void PerformInsertNumber(String obj)
         {
-            TextGreetings += obj.ToString();
+            TextGreetings += obj;
         }
         private void PerformCheckText()
         {
