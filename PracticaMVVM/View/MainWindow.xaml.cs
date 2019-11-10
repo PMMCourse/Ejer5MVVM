@@ -12,17 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PracticaMVVM.ViewModel; //Importamos la carpeta donde tenemos las clases de ViewModel.
 
-namespace Ejer5MVVM
+namespace PracticaMVVM
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Lógica de interacción para MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            //Aqui es donde vamos a conectar con el ViewModel, para ello creamos la instancia de ella, ya que es la clase donde estan los atributos
+            //que nos interesa conectar:
+
+            var vm = new MainViewModel(); //Guardamos la instancia.
+            DataContext = vm; // Se la añadimos a DataConext.
+
         }
     }
 }
