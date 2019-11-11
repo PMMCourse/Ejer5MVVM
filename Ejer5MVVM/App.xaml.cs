@@ -13,5 +13,9 @@ namespace Ejer5MVVM
     /// </summary>
     public partial class App : Application
     {
+        /*
+        Por un listado de varios elementos tener un cuadro de texto donde se
+        introduzca el índice y se muestre el elemento indicado con el índice.
+         */
     }
 }
