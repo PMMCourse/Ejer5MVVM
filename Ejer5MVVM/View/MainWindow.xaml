@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <TextBox Height="28" Margin="0,0,598,0" Text ="{Binding buscarPalabras, UpdateSourceTrigger=PropertyChanged}" />
-            <Label Height="28" Margin="0,10,200,0" Content="{Binding encontrarPalabras}"/>
+            <TextBox Height="28" Margin="0,0,598,0" Text ="{Binding BuscarPalabras, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Height="28" Margin="0,10,200,0" Content="{Binding EncontrarPalabras}"/>
         </StackPanel>
     </Grid>
 </Window>

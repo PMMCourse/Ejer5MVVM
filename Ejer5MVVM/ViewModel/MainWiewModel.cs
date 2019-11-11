@@ -9,33 +9,37 @@ namespace Ejer5MVVM.ViewModel
 {
     public class MainWiewModel : BaseViewModel
     {
-        List<string> terminos = new List<string>
+        private List<string> _terminos = new List<string>()
         {
-            "Pedro", "Maria", "Jose", "Juanki", "Chema"
+            "Pedro", 
+            "Maria", 
+            "Jose", 
+            "Juanki", 
+            "Chema"
         };
         
         
-        private string _buscarPalabra;
-        public string buscarPalabra
+        private string _buscarPalabras;
+        public string BuscarPalabras
         {
-            get => _buscarPalabra;
+            get => _buscarPalabras;
             set
             {
-                _buscarPalabra = value;
-                encontrarPalabra = terminos.FirstOrDefault(x => x.ToLower().Contains(_buscarPalabra.ToLower()));
+                _buscarPalabras = value;
+                EncontrarPalabras = _terminos.FirstOrDefault(x => x.ToLower().Contains(_buscarPalabras.ToLower()));
                 RaiseProperty();
             }
         }
 
 
         
-        private string _encontrarPalabra;
-        public string encontrarPalabra
+        private string _encontrarPalabras;
+        public string EncontrarPalabras
         {
-            get => _encontrarPalabra;
+            get => _encontrarPalabras;
             set 
             {
-                _encontrarPalabra = value;
+                _encontrarPalabras = value;
                 RaiseProperty();
             }
         }
