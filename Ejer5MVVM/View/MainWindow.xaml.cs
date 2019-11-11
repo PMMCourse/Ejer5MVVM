@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ejer5MVVM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Ejer5MVVM
+namespace Ejer5MVVM.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,20 +23,9 @@ namespace Ejer5MVVM
         public MainWindow()
         {
             InitializeComponent();
+            var vm = new MainViewModel();
+            DataContext = vm;
         }
-        
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-            String tex = tbMain.Text;
-            tbresult.Text = Invertir(tbMain.Text);
-            
-        }
-        static string Invertir(string c)
-        {
-            char[] array = c.ToCharArray(); //Lo paso a array
-            Array.Reverse(array);//metodo para darle la vuelta 
-            return new string(array); //lo convierto a String de nuevo
-        }
+
     }
 }
