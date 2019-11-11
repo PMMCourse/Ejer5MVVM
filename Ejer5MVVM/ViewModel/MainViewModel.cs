@@ -1,4 +1,5 @@
-﻿using Ejer5MVVM.ViewModel.Base;
+﻿using Ejer5MVVM.Services;
+using Ejer5MVVM.ViewModel.Base;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,6 +15,7 @@ namespace Ejer5MVVM.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
+        Names n = new Names();
         private RelayCommand _Addname;
         private RelayCommand _Delname;
         private RelayCommand _CheckIndice;
@@ -34,18 +36,27 @@ namespace Ejer5MVVM.ViewModel
         private string _NombreSele;
         private string _Mostrarindice;
 
-        public ObservableCollection<string> _Nombres = new ObservableCollection<string>()
+        public ObservableCollection<string> _Nombres = new ObservableCollection<string>();
+
+        public ObservableCollection<string> Nombres
         {
-            "Ana",
-            "Nacho",
-            "Pedro",
-        };
+            get => _Nombres;
+            set
+            {
+                _Nombres = value;
+                RaiseProperty();
+            }
+        }
 
         public MainViewModel()
         {
+            LoadNames();
+            InitCommands();
+        }
+        private void InitCommands()
+        {
             _CheckIndice = new RelayCommand(Checkindice);
-            _Delname = new RelayCommand(DelName);
-           
+            _Delname = new RelayCommand(DelName);     
         }
 
         public string Nom
@@ -71,16 +82,6 @@ namespace Ejer5MVVM.ViewModel
             }
         }
     
-        public ObservableCollection<string> Nombres
-        {
-            get => _Nombres;
-            set
-            {
-                _Nombres = value;
-                RaiseProperty();
-            }
-        }
-
         public string Mostrarindice
         {
             get => _Mostrarindice;
@@ -103,52 +104,26 @@ namespace Ejer5MVVM.ViewModel
 
         private void Checkindice()
         {
-            for (int i = 0; i < Nombres.Count; i++)
-            {
-                if (_Indice == Nombres.IndexOf(Nombres[i]))
-                {
-                    Mostrarindice = $"{Nombres[i]}, {Nombres.IndexOf(Nombres[i])}";
-                }
-            }
+            Mostrarindice = n.Checkindice(Nombres, Indice, Mostrarindice);
         }
 
         private void AddName()
         {
-            if (Nom != null && Nom != "")
-            {
-                Nombres.Add(Nom);
-                MessageBox.Show("nombre añadido");
-                Nom = "";
-            }
-            else
-            {
-                MessageBox.Show("Campo vacio");
-            }
+            n.AddName(Nom, Nombres);
+            Nom = "";
 
         }
 
         private void DelName()
         {
-            if(NombreSele != null)
-            {
-                Nombres.Remove(NombreSele);
-                MessageBox.Show("nombre eliminado");
-            }
-            else 
-            {
-                foreach(var i in Nombres)
-                {
-                    if(Nom == i)
-                    {
-                        Nombres.Remove(Nom);
-                        MessageBox.Show("nombre eliminado");
-                        Nom = "";
-                        return;
-                    }
-                }
-                MessageBox.Show("nombre no encontrado");
-                Nom = "";
-            }           
+            n.DelName(NombreSele, Nombres, Nom);
+            Nom = "";
+
+        }
+
+        private void LoadNames()
+        {
+            _Nombres = new ObservableCollection<string>(n.GetNames());
         }
     }
 }
