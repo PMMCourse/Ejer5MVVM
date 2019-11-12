@@ -14,9 +14,9 @@ using System.Windows.Shapes;
 
 namespace Ejer5MVVM.View {
     public partial class ShowText : Window {
+        ViewModel.MainViewModel vm;
         public ShowText(ViewModel.MainViewModel vm) {
             InitializeComponent();
-            var vm2 = vm;
             DataContext = vm;
         }
     }

@@ -18,13 +18,12 @@ namespace Ejer5MVVM.View {
         ViewModel.MainViewModel vm = new ViewModel.MainViewModel();
         public MainWindow() {
             InitializeComponent();
-
             DataContext = vm;
         }
 
         private void btn_Boton_Click(object sender, RoutedEventArgs e) {
-            ShowText showText = new ShowText(vm);
-            showText.ShowDialog();
+            ShowText formShowText = new ShowText(vm);
+            formShowText.ShowDialog();
         }
     }
 }

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ejer5MVVM.View"
         mc:Ignorable="d"
-        Title="ShowText" Height="450" Width="800">
+        Title="ShowText" Height="200" Width="200">
     <Grid>
-        <Label x:Name="lbl_Text" Content="{Binding CustomizedText}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="31" Width="199"/>
+        <Label x:Name="lbl_Text" Content="{Binding CustomizedText}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="31"/>
 
     </Grid>
 </Window>

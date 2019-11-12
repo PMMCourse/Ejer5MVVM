@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ejer5MVVM.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name = "txt_Texto" Text="{Binding CustomizedText}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
-        <Button x:Name="btn_Boton" Command="{Binding CheckCustomizedTextCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60"  Margin="0,100,0,0" Click="btn_Boton_Click">Enviar</Button>
+        Title="MainWindow" Height="200" Width="250">
+    <Grid Width="250" Height="200">
+        <TextBox x:Name = "txt_Texto" Text="{Binding CustomizedText}" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Center" Width="120"/>
+        <Button x:Name="btn_Boton" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60"  Margin="0,0,0,0" Click="btn_Boton_Click">Enviar</Button>
     </Grid>
 </Window>

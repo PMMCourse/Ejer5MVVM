@@ -10,15 +10,7 @@ using System.Windows.Input;
 namespace Ejer5MVVM.ViewModel {
     public class MainViewModel : BaseViewModel {
 
-        private RelayCommand _checkCustomizedTextCommand;
-        public ICommand CheckCustomizedTextCommand => _checkCustomizedTextCommand;
-
         public MainViewModel() {
-            _checkCustomizedTextCommand = new RelayCommand(PerformCheckText);
-        }
-
-        private void PerformCheckText() {
-
         }
 
         private string _customizedText;
