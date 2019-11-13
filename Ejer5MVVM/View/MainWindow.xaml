@@ -1,4 +1,4 @@
-﻿<Window x:Class="Ejer5MVVM.View.MainViewModel"
+﻿<Window x:Class="Ejer5MVVM.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -19,7 +19,7 @@
                 <Button Content="2.Son densas pero explica bien" Command="{Binding InsertNumberCommand}" CommandParameter="2" Width="260"/>
                 <Button Content="3.No me entero de nada y me copio los trabajos" Command="{Binding InsertNumberCommand}" CommandParameter="3" Width="260"/>
                 <Button x:Name="Button1" Content="Press ME" Height="100" HorizontalAlignment="Stretch" 
-                    Command="{Binding CheckTextGreetingsCommand}" Click="Button1_Click"  Width="73"/>
+                    Command="{Binding CheckTextGreetingsCommand}"  Width="73"/>
             </StackPanel>
 
 
