@@ -77,9 +77,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Servicios\NumeroService.cs" />
+    <Compile Include="Servicios\PantallaService.cs" />
     <Compile Include="VistaModelo\BaseVistaModelo.cs" />
     <Compile Include="VistaModelo\RelayCommand.cs" />
-    <Compile Include="VistaModelo\VistaModelo.cs" />
+    <Compile Include="VistaModelo\VistaModeloPrincipal.cs" />
     <Page Include="Vista\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

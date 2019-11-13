@@ -10,11 +10,19 @@ namespace Ejer5MVVM.VistaModelo
     public class RelayCommand : ICommand
     {
         private Action _action;
+        private Action<object, EventArgs> perfomEjecutarNumero;
 
         public RelayCommand(Action action)
         {
             _action = action;
         }
+
+        //en principio me permite recibir el sender del boton que sea pulsado
+        public RelayCommand(Action<object, EventArgs> perfomEjecutarNumero)
+        {
+           this.perfomEjecutarNumero = perfomEjecutarNumero;
+        }
+
 
         public event EventHandler CanExecuteChanged;
 
@@ -28,6 +36,8 @@ namespace Ejer5MVVM.VistaModelo
             _action?.Invoke();
         }
     }
+
+    //Clase que recibe el generico
 
     public class RelayCommand<T> : ICommand
     {
@@ -47,7 +57,7 @@ namespace Ejer5MVVM.VistaModelo
 
         public void Execute(object parameter)
         {
-            _action.Invoke((T)parameter);
+            _action?.Invoke((T)parameter);
         }
     }
 }

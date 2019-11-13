@@ -13,6 +13,7 @@ namespace Ejer5MVVM.VistaModelo
         public event PropertyChangedEventHandler PropertyChanged;
         public void RaiseProperty([CallerMemberName] string propertyName = "")
         {
+            //comprueba que no sea null con ?
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
