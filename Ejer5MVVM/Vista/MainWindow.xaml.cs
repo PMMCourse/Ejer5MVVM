@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ejer5MVVM.VistaModelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,14 @@ using System.Windows.Shapes;
 
 namespace Ejer5MVVM
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            //Añadimos el contexto de Datos para que Vista y ViewModel se encuentren conectados
+            DataContext = new VistaModeloPrincipal();
         }
     }
 }
