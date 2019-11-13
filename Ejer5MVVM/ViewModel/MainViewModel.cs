@@ -1,4 +1,5 @@
-﻿using Ejer5MVVM.ViewModel.Base;
+﻿using Ejer5MVVM.Services;
+using Ejer5MVVM.ViewModel.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,11 +23,14 @@ namespace Ejer5MVVM.ViewModel
 
         public MainViewModel()
         {
-            _checkTextGreetingsCommand = new RelayCommand<string>(ImprimeMsg);
+            _checkTextGreetingsCommand = new RelayCommand<string>(LlamaCuelga);
             _insertNumberCommand = new RelayCommand<string>(PerformCheckText);
         }
 
-        private void ImprimeMsg(string obj)
+        private void LlamaCuelga(string obj) {
+            new MainServices().ImprimeMsg(TextGreetings);
+        }
+        /*private void ImprimeMsg(string obj)
         {
             if (TextGreetings == "1" || TextGreetings == "3")
             {
@@ -36,7 +40,7 @@ namespace Ejer5MVVM.ViewModel
             {
                 MessageBox.Show("Muy bien pelotilla");
             }
-        }
+        }*/
 
         private void PerformCheckText(string obj)
         {
