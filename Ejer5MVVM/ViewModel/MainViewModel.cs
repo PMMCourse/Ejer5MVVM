@@ -9,16 +9,23 @@ using System.Windows.Input;
 
 namespace Ejer5MVVM.ViewModel {
     public class MainViewModel : BaseViewModel {
+        private RelayCommand _abrirVentanaComando;
+        public ICommand AbrirVentanaComando => _abrirVentanaComando;
 
         public MainViewModel() {
+            _abrirVentanaComando = new RelayCommand(AbrirVentana);
         }
 
-        private string _customizedText;
+        private void AbrirVentana() {
+            new View.ShowText(this).ShowDialog();
+        }
 
-        public string CustomizedText {
-            get => _customizedText;
+        private string _textoPersonalizado;
+
+        public string TextoPersonalizado {
+            get => _textoPersonalizado;
             set {
-                _customizedText = value;
+                _textoPersonalizado = value;
                 RaiseProperty();
             }
         }

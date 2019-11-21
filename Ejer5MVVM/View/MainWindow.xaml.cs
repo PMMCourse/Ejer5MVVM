@@ -15,15 +15,11 @@ using System.Windows.Shapes;
 namespace Ejer5MVVM.View {
 
     public partial class MainWindow : Window {
-        ViewModel.MainViewModel vm = new ViewModel.MainViewModel();
+        public ViewModel.MainViewModel vm = new ViewModel.MainViewModel();
         public MainWindow() {
             InitializeComponent();
             DataContext = vm;
         }
 
-        private void btn_Boton_Click(object sender, RoutedEventArgs e) {
-            ShowText formShowText = new ShowText(vm);
-            formShowText.ShowDialog();
-        }
     }
 }

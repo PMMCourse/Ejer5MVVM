@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ShowText" Height="200" Width="200">
     <Grid>
-        <Label x:Name="lbl_Text" Content="{Binding CustomizedText}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="31"/>
+        <Label x:Name="lbl_Text" Content="{Binding TextoPersonalizado}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="31" Margin="58,69,53,69" Width="81"/>
 
     </Grid>
 </Window>

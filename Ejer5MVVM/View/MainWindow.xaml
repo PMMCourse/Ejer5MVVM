@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="200" Width="250">
     <Grid Width="250" Height="200">
-        <TextBox x:Name = "txt_Texto" Text="{Binding CustomizedText}" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Center" Width="120"/>
-        <Button x:Name="btn_Boton" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60"  Margin="0,0,0,0" Click="btn_Boton_Click">Enviar</Button>
+        <TextBox x:Name = "txt_Texto" Text="{Binding TextoPersonalizado}" HorizontalAlignment="Center" Margin="0,0,0,50" VerticalAlignment="Center" Width="120"/>
+        <Button x:Name="btn_Boton" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60"  Margin="0,0,0,0" Command="{Binding AbrirVentanaComando}">Enviar</Button>
     </Grid>
 </Window>

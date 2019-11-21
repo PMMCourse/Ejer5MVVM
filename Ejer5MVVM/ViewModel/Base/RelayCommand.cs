@@ -40,5 +40,9 @@ namespace Ejer5MVVM.ViewModel.Base {
         public void Execute(object parameter) {
             _action.Invoke((T)Convert.ChangeType(parameter, typeof(T)));
         }
+
+        public static implicit operator RelayCommand<T>(RelayCommand v) {
+            throw new NotImplementedException();
+        }
     }
 }
