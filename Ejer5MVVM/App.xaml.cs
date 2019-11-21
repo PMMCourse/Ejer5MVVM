@@ -11,6 +11,8 @@ namespace Ejer5MVVM
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
+    
+    // Escribir un texto, pulsar el botón y que en la nueva ventana aparezca el texto.
     public partial class App : Application
     {
     }
