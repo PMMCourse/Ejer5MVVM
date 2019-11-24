@@ -6,7 +6,23 @@
         xmlns:local="clr-namespace:Ejer5MVVM"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid RenderTransformOrigin="0.488,0.443">
+        <ListBox x:Name="lista" BorderBrush="DarkRed"  HorizontalAlignment="Left" Height="295" VerticalAlignment="Top" Width="271" Margin="46,47,0,0" SelectionChanged="ListBox_SelectionChanged">
+            <ListBoxItem>Marta Castro</ListBoxItem>
+            <ListBoxItem>Victor Alonso</ListBoxItem>
+            <ListBoxItem>Marina Cascon</ListBoxItem>
+            <ListBoxItem>Jose Rodriguez</ListBoxItem>
+            <ListBoxItem>David Alvarez</ListBoxItem>
+            <ListBoxItem>Natalia Ruiz</ListBoxItem>
+            <ListBoxItem>Ramon Salado</ListBoxItem>
+            <ListBoxItem>Raul Gonzalez</ListBoxItem>
+            <ListBoxItem>Franco Vazquez</ListBoxItem>
+            <ListBoxItem>Manuel Elliott</ListBoxItem>
+        </ListBox>
+        <ListBox x:Name="lista2" BorderBrush="DarkRed"  HorizontalAlignment="Left" Height="295" Margin="475,47,0,0" VerticalAlignment="Top" Width="256"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="353,105,0,0" VerticalAlignment="Top" Width="75" Height="51" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
+        </Button>
+        <Button Content="->" HorizontalAlignment="Left" Margin="353,225,0,0" VerticalAlignment="Top" Width="75" Height="51" RenderTransformOrigin="0.5,0.5" Click="Button_Click"/>
+
     </Grid>
 </Window>
